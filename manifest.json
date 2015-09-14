@@ -1,0 +1,47 @@
+{
+    "name": "com.cortexpowered.apps.editorial-content",
+    "version": "1.0.0",
+    "displayName": "Editorial Content",
+    "description": "This application displays editorial images from a set of RSS feeds. The application will work offline if it is configured to cache content.",
+    "author": "Cortex",
+    "email": "support@cortexpowered.com",
+    "homepage": "http://www.cortexpowered.com",
+    "type": "application",
+    "assets": {
+        "icon128": "",
+        "icon256": "./app_assets/icon256.png",
+        "icon512": "",
+        "screenshot1": "./app_assets/screenshot1.png",
+        "screenshot2": "",
+        "screenshot3": "",
+        "screenshot4": "",
+        "screenshot5": ""
+    },
+    "parameters": [
+        {
+            "name": "view.feeds",
+            "default": "",
+            "description": "A space separated list of RSS feeds."
+        },
+        {
+            "name": "view.duration",
+            "default": "7500",
+            "description": "The duration an editorial image will be shown on screen in milliseconds."
+        },
+        {
+            "name": "content.ttl",
+            "default": "3600000",
+            "description": "The duration an editorial image will get cached in milliseconds."
+        },
+        {
+            "name": "feed.ttl",
+            "default": "3600000",
+            "description": "The duration an editorial RSS feed will get cached in milliseconds."
+        },
+        {
+            "name": "feed.refreshInterval",
+            "default": "3600000",
+            "description": "Refresh interval of an RSS feed in milliseconds."
+        }
+    ]
+}
