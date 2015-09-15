@@ -42,12 +42,12 @@ describe 'View', ->
       render = sinon.stub view, '_render', ->
       view.prepare offer
       expect(get).to.have.been.calledOnce
-      expect(render).to.have.been.calledOnce
-      expect(render).to.have.been.calledWith 'image-url'
       expect(offer).to.have.been.calledOnce
       cb = offer.args[0][0]
       done = sinon.stub()
       cb done
+      expect(render).to.have.been.calledOnce
+      expect(render).to.have.been.calledWith 'image-url'
       expect(done).to.not.have.been.called
       @clock.tick view._viewDuration
       expect(done).to.have.been.calledOnce

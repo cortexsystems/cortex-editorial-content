@@ -10,8 +10,8 @@ class View
   prepare: (offer) ->
     url = @_feed.get()
     if not not url
-      @_render url
       offer (done) =>
+        @_render url
         setTimeout done, @_viewDuration
     else
       offer()
