@@ -4,7 +4,7 @@ init = ->
   window.addEventListener 'cortex-ready', ->
     window.Cortex.app.getConfig()
       .then (config) ->
-        feeds = config['view.feeds']
+        feeds = config['cortex.editorial.view.feeds']
         views = []
         for feed in feeds?.split(' ')
           feed = feed.trim()
