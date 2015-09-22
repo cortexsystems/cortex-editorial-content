@@ -23,9 +23,9 @@ describe 'View', ->
 
   it 'should use config parameters', ->
     config =
-      'content.ttl': 1000
-      'feed.ttl': 2000
-      'feed.refreshInterval': 3000
+      'cortex.editorial.content.ttl': 1000
+      'cortex.editorial.feed.ttl': 2000
+      'cortex.editorial.feed.refreshInterval': 3000
     feed = new Feed config
     expect(feed._assetCacheTTL).to.equal 1000
     expect(feed._feedCacheTTL).to.equal 2000
@@ -33,9 +33,9 @@ describe 'View', ->
 
   it 'should generate a feed url with caching parameters', ->
     config =
-      'content.ttl': 1000
-      'feed.ttl': 2000
-      'feed.refreshInterval': 3000
+      'cortex.editorial.content.ttl': 1000
+      'cortex.editorial.feed.ttl': 2000
+      'cortex.editorial.feed.refreshInterval': 3000
 
     global.document.createElement.returns href: 'http://test-url'
     feed = new Feed config, 'http://test-url'
@@ -52,9 +52,9 @@ describe 'View', ->
 
   it 'should start the fetch timer', ->
     config =
-      'content.ttl': 1000
-      'feed.ttl': 2000
-      'feed.refreshInterval': 3000
+      'cortex.editorial.content.ttl': 1000
+      'cortex.editorial.feed.ttl': 2000
+      'cortex.editorial.feed.refreshInterval': 3000
     expect(@clock.timers).to.not.be.ok
     feed = new Feed config
     expect(Object.keys(@clock.timers)).to.have.length 1

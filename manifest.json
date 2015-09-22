@@ -19,27 +19,27 @@
     },
     "parameters": [
         {
-            "name": "view.feeds",
+            "name": "cortex.editorial.view.feeds",
             "default": "",
             "description": "A space separated list of RSS feeds."
         },
         {
-            "name": "view.duration",
+            "name": "cortex.editorial.view.duration",
             "default": "7500",
             "description": "The duration an editorial image will be shown on screen in milliseconds."
         },
         {
-            "name": "content.ttl",
-            "default": "3600000",
+            "name": "cortex.editorial.content.ttl",
+            "default": "86400000",
             "description": "The duration an editorial image will get cached in milliseconds."
         },
         {
-            "name": "feed.ttl",
+            "name": "cortex.editorial.feed.ttl",
             "default": "3600000",
             "description": "The duration an editorial RSS feed will get cached in milliseconds."
         },
         {
-            "name": "feed.refreshInterval",
+            "name": "cortex.editorial.feed.refreshInterval",
             "default": "3600000",
             "description": "Refresh interval of an RSS feed in milliseconds."
         }

@@ -21,7 +21,7 @@ describe 'View', ->
 
   it 'should use the provided view duration', ->
     config =
-      'view.duration': 15000
+      'cortex.editorial.view.duration': 15000
     view = new View config
     expect(view._viewDuration).to.equal 15000
 

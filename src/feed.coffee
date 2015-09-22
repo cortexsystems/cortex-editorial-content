@@ -8,13 +8,13 @@ class Feed
 
     @_requestThrottleMs = 500
 
-    @_assetCacheTTL = @_config?['content.ttl']
+    @_assetCacheTTL = @_config?['cortex.editorial.content.ttl']
     @_assetCacheTTL ?= 3600000
 
-    @_feedCacheTTL = @_config?['feed.ttl']
+    @_feedCacheTTL = @_config?['cortex.editorial.feed.ttl']
     @_feedCacheTTL ?= 3600000
 
-    @_feedRefreshInterval = @_config?['feed.refreshInterval']
+    @_feedRefreshInterval = @_config?['cortex.editorial.feed.refreshInterval']
     @_feedRefreshInterval ?= 3600000
 
     @_url = @_generateCortexUrl url
