@@ -1,6 +1,6 @@
 {
   "name": "com.cortexpowered.apps.editorial-content",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "BSD-3-Clause",
   "description": "",
   "main": "src/index.js",

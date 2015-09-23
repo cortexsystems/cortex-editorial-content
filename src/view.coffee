@@ -24,11 +24,11 @@ class View
       div.style.setProperty 'width', '100%'
       div.style.setProperty 'height', '100%'
       div.style.setProperty 'overflow', 'hidden'
-      div.style.setProperty 'background-repeat', 'no-repeat'
-      div.style.setProperty 'background-position', '50% 50%'
-      div.style.setProperty 'background-size', 'contain'
       document.body.insertBefore div, document.body.firstChild
 
     div.style.setProperty 'background', "url(\"#{url}\")"
+    div.style.setProperty 'background-repeat', 'no-repeat'
+    div.style.setProperty 'background-position', '50% 50%'
+    div.style.setProperty 'background-size', 'contain'
 
 module.exports = View
