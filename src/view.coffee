@@ -5,7 +5,8 @@ class View
     @_feed = new Feed @_config, @_url
 
     @_orientation = @_config?['cortex.editorial.view.orientation']
-    @_orientation ?= 'portrait'
+    if @_orientation != 'portrait' and @_orientation != 'landscape'
+      @_orientation = 'portrait'
 
     @_viewDuration = @_config?['cortex.editorial.view.duration']
     @_viewDuration ?= 7500
@@ -29,7 +30,7 @@ class View
         when 'landscape'
           img.style.setProperty 'width', '100%'
           img.style.setProperty 'height', 'auto'
-        when 'portrait'
+        else
           img.style.setProperty 'width', 'auto'
           img.style.setProperty 'height', '100%'
       img.style.setProperty 'display', 'inner-block'
