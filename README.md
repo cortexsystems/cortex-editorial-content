@@ -10,8 +10,9 @@ make dist
 Application zip file will appear under `./dist`.
 
 # Configuration Parameters
-  - `view.feeds`: A space separated list of RSS feeds.
-  - `view.duration`: [default=7500] The duration an editorial image will be shown on screen in milliseconds.
-  - `content.ttl`: [default=3600000] The duration an editorial image will get cached in milliseconds.
-  - `feed.ttl`: [default=3600000] The duration an editorial RSS feed will get cached in milliseconds.
-  - `feed.refreshInterval`: [default=3600000] Refresh interval of an RSS feed in milliseconds.
+  - `cortex.editorial.view.feeds`: A space separated list of RSS feeds.
+  - `cortex.editorial.view.duration`: [default=7500] The duration an editorial image will be shown on screen in milliseconds.
+  - `cortex.editorial.view.orientation`: [default=portrait] The orientation of the editorial images. Can be `portrait` or `landscape`.
+  - `cortex.editorial.content.ttl`: [default=86400000] The duration an editorial image will get cached in milliseconds.
+  - `cortex.editorial.feed.ttl`: [default=3600000] The duration an editorial RSS feed will get cached in milliseconds.
+  - `cortex.editorial.feed.refreshInterval`: [default=3600000] Refresh interval of an RSS feed in milliseconds.

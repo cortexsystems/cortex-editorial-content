@@ -29,6 +29,11 @@
             "description": "The duration an editorial image will be shown on screen in milliseconds."
         },
         {
+            "name": "cortex.editorial.view.orientation",
+            "default": "portrait",
+            "description": "The orientation of editorial images. Can be 'portrait' or 'landscape'"
+        },
+        {
             "name": "cortex.editorial.content.ttl",
             "default": "86400000",
             "description": "The duration an editorial image will get cached in milliseconds."

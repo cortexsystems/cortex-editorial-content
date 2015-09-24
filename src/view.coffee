@@ -4,6 +4,9 @@ class View
   constructor: (@_config, @_url) ->
     @_feed = new Feed @_config, @_url
 
+    @_orientation = @_config?['cortex.editorial.view.orientation']
+    @_orientation ?= 'portrait'
+
     @_viewDuration = @_config?['cortex.editorial.view.duration']
     @_viewDuration ?= 7500
 
@@ -17,18 +20,20 @@ class View
       offer()
 
   _render: (url) ->
-    div = document.getElementById 'content-div'
-    if not div
-      div = document.createElement 'div'
-      div.setAttribute 'id', 'content-div'
-      div.style.setProperty 'width', '100%'
-      div.style.setProperty 'height', '100%'
-      div.style.setProperty 'overflow', 'hidden'
-      document.body.insertBefore div, document.body.firstChild
-
-    div.style.setProperty 'background', "url(\"#{url}\")"
-    div.style.setProperty 'background-repeat', 'no-repeat'
-    div.style.setProperty 'background-position', '50% 50%'
-    div.style.setProperty 'background-size', 'contain'
+    container = document.getElementById 'content'
+    img = document.getElementById 'img'
+    if not img
+      img = new Image()
+      img.setAttribute 'id', 'img'
+      switch @_orientation
+        when 'landscape'
+          img.style.setProperty 'width', '100%'
+          img.style.setProperty 'height', 'auto'
+        when 'portrait'
+          img.style.setProperty 'width', 'auto'
+          img.style.setProperty 'height', '100%'
+      img.style.setProperty 'display', 'inner-block'
+      container.insertBefore img, container.firstChild
+    img.src = url
 
 module.exports = View
