@@ -5,29 +5,17 @@ init = ->
     window.Cortex.app.getConfig()
       .then (config) ->
         feeds = config['cortex.editorial.view.feeds']
-        views = []
+        urls = []
         for feed in feeds?.split(' ')
           feed = feed.trim()
-          if not feed
-            continue
+          if not not feed
+            urls.push feed
 
-          views.push new View config, feed
-
-        if views.length == 0
+        if urls.length == 0
           throw new Error('No RSS feeds provided. Application cannot run.')
 
-        # Make views accesible on dev console.
-        window.EditorialViews = views
-
-        viewIndex = 0
-        window.Cortex.scheduler.onPrepare (offer) ->
-          if viewIndex >= views.length
-            viewIndex = 0
-
-          view = views[viewIndex]
-          view.prepare offer
-          viewIndex += 1
-
+        window.EditorialView = new View config, urls
+        window.Cortex.scheduler.onPrepare window.EditorialView.prepare
       .catch (e) ->
         console.error 'Failed to initialize the application.', e
         throw e
