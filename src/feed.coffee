@@ -2,7 +2,7 @@ promise = require 'promise'
 $       = require 'jquery'
 
 class Feed
-  constructor: (@_config, url, @_onNewImages) ->
+  constructor: (@_config, url) ->
     @_imageIndex = 0
     @_images = []
 
@@ -46,7 +46,6 @@ class Feed
           promises = (@_cache(url, i * @_requestThrottleMs) for url, i in urls)
           promise.all promises
             .then (res) =>
-              @_onNewImages @_images, res
               @_images = res
               resolve()
             .catch (e) ->
