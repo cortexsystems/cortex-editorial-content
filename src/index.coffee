@@ -14,6 +14,13 @@ init = ->
         if urls.length == 0
           throw new Error('No RSS feeds provided. Application cannot run.')
 
+        rotate = JSON.parse config['cortex.editorial.rotate']
+        if rotate
+          link = window.document.createElement 'link'
+          link.setAttribute 'rel', 'stylesheet'
+          link.setAttribute 'href', 'rotate.css'
+          window.document.body.appendChild link
+
         window.EditorialView = new View config, urls
         window.Cortex.scheduler.onPrepare window.EditorialView.prepare
       .catch (e) ->

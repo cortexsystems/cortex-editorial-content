@@ -47,6 +47,11 @@
             "name": "cortex.editorial.feed.refreshInterval",
             "default": "3600000",
             "description": "Refresh interval of an RSS feed in milliseconds."
+        },
+        {
+            "name": "cortex.editorial.rotate",
+            "default": "false",
+            "description": "Rotate the application 90 degrees."
         }
     ]
 }
