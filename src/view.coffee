@@ -33,7 +33,7 @@ class View
     if not not url
       @_createDOMNode container, url
 
-      offer (done) =>
+      view = (done) =>
         if @_prev?
           prev = document.getElementById @_prev
           if prev?
@@ -49,6 +49,16 @@ class View
           setTimeout end, @_viewDuration
         else
           done()
+
+      opts =
+        label:  url
+        ttl:    60 * 60 * 1000
+        companion:
+          asset_url:  url
+          click_url:  'http://www.cortexpowered.com'
+          mime_type:  'image/jpeg'
+
+      offer view, opts
     else
       offer()
 
