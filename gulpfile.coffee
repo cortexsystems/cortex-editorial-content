@@ -16,9 +16,12 @@ project =
   assets_src:   './app_assets/**'
   assets_dest:  './build/app_assets'
   manifest:     './manifest.json'
+  readme:       './README.md'
+  changelog:    './CHANGELOG.md'
 
 gulp.task 'default', ['pack']
-gulp.task 'build', ['src', 'app_assets', 'static', 'manifest']
+gulp.task 'build', ['src', 'app_assets', 'static', 'readme', 'changelog',
+  'manifest']
 
 gulp.task 'src', ->
   gulp.src('./src/index.coffee',  read: false)
@@ -43,6 +46,14 @@ gulp.task 'manifest', ->
       json.version = Package.version
       json
     )).pipe(gulp.dest(project.build))
+
+gulp.task 'readme', ->
+  gulp.src(project.readme)
+    .pipe(gulp.dest(project.build))
+
+gulp.task 'changelog', ->
+  gulp.src(project.changelog)
+    .pipe(gulp.dest(project.build))
 
 gulp.task 'pack', ['build'], ->
   gulp.src("#{project.build}/**")
